@@ -12,6 +12,9 @@ npm install -g json-server
 db.json文件我放在了pubilc文件下
 然后执行npm start 
 
+登录账号密码admin/123456
+
+
 
 
 The page will reload when you make changes.\
