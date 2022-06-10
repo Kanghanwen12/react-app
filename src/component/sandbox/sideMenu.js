@@ -7,8 +7,8 @@ import {
 } from '@ant-design/icons';
 import { withRouter } from 'react-router-dom';
 import {connect} from 'react-redux'
-import axios from 'axios' 
 import  './index.css'
+import { ChildList } from '../../util/api'
 const { Sider } = Layout;
 
 // const SideMenuData = [
@@ -39,10 +39,15 @@ const { Sider } = Layout;
  const SideMenu = (props) => {
   const [dataMenu, setDataMenu] = useState([])
   useEffect(() => {
-    axios.get('/rights?_embed=children').then(res=>{
-      console.log(res.data)
-      setDataMenu(res.data)
-    })
+    console.log()
+    // axios.get('/rights?_embed=children').then(res=>{
+    //   console.log(res.data)
+    //   setDataMenu(res.data)
+    // })
+    ChildList().then(res=>{
+        console.log(res.data,'111')
+        setDataMenu(res.data)
+      })
   }, [])
   const iconList= {
     '/home': <UserOutlined />,
