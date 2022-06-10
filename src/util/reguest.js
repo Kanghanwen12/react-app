@@ -11,13 +11,13 @@ var request = axios.create({
 
 // 拦截请求
 request.interceptors.request.use(function (config) {
-  // token = 
-  let token = localStorage.getItem('tonken')
-  if(token) {
-    config.headers= {
-      'x-auth-token': token
-    }
-  }
+  // token =
+  // let token = localStorage.getItem('tonken')
+  // if(token) {
+  //   config.headers= {
+  //     'x-auth-token': token
+  //   }
+  // }
   // Do something before request is sent
   store.dispatch({
     type: 'change_loading',

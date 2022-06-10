@@ -1,6 +1,7 @@
 import { Table, Tag, Space } from 'antd';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { ChildList, DeleteList, aditList } from '../../../../util/api'
 
 
 
@@ -50,33 +51,41 @@ const List = () => {
   const [dataSource, setDataSource] = useState([]);
 
   useEffect(() => {
-    axios.get('/rights?_embed=children').then(res =>{
-      res.data[0].children = null
-      res.data.map((item) => {
-        if(!item.children || item.children.length === 0){
-          item.children = null
-        }
+    ChildList({}).then(res =>{
+        res.data[0].children = null
+        res.data.map((item) => {
+          if(!item.children || item.children.length === 0){
+            item.children = null
+          }
+        })
+        setDataSource(res.data)
       })
-      setDataSource(res.data)
-    })
   }, [])
 
   const del = (record) => {
     console.log(record);
-    axios.delete(`/rights/${record.id}`).then(res =>{
-      setDataSource(dataSource.fifter(data => data.id !== record.id))
-    })
+    DeleteList({id:record.id}).then(res => {
+        setDataSource(dataSource.fifter(data => data.id !== record.id))
+      }).catch(res =>{
+        console.log(11)
+      })
+    // axios.delete(`/rights/${record.id}`).then(res =>{
+    //   setDataSource(dataSource.fifter(data => data.id !== record.id))
+    // })
   
   };
   const adit = (item) => {
     console.log(item);
     item.pagepermisson =  item.pagepermisson === 1 ? 0 : 1 
     setDataSource([...dataSource])
-      axios.patch(`/rights/${item.id}`,{
-        pagepermisson: item.pagepermisson
-      }).then(res =>{
+    aditList(item.id,{pagepermisson: item.pagepermisson}).then(res => {
+
+    })
+      // axios.patch(`/rights/${item.id}`,{
+      //   pagepermisson: item.pagepermisson
+      // }).then(res =>{
    
-      })
+      // })
 
    
 

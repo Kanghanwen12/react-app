@@ -3,7 +3,7 @@ import { Button, Checkbox, Form, Input, message } from "antd";
 import React from "react";
 import  './login.css'
 import { withRouter } from "react-router-dom";
-import {LoginApi} from "@util/api";
+import {LoginApi} from "../../util/api";
 
 
 const Login = (props) => {
@@ -35,7 +35,7 @@ const Login = (props) => {
 
   return (
     <div className="form">
-      
+
       <div className="formDiv">
         <div className="title">登录系统</div>
         <Form
