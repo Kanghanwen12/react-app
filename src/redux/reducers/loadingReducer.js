@@ -7,10 +7,11 @@ export const LoadingReducer = (
   let { type, payLoad } = action;
   console.log(action.payLoad,'payload')
   switch (type) {
-    case "change_loading":
+    case "change_loading": {
       let newState = { ...prevState };
       newState.isLoading = payLoad;
       return newState;
   }
+}
   return prevState;
 };

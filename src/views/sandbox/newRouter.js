@@ -9,7 +9,7 @@ import Not404 from "./404/not";
 //   '/right-manage/right/list': RoleList,
 // }
 
-const  NewRouter = () => {
+const NewRouter = () => {
   return (
     <Switch>
       <Route path="/home" component={HomeList} />

@@ -1,4 +1,4 @@
-import  request from './reguest'
+import request from './reguest'
 
 export const LoginApi = (params) => {
   return request({
@@ -7,7 +7,7 @@ export const LoginApi = (params) => {
     // params: params, //传递数据
   });
 };
-export const ChildList = (params) => {  
+export const ChildList = () => {
   return request({
     url: `/rights?_embed=children`, //请求路由
     method: "get", //请求方式
@@ -24,7 +24,7 @@ export const DeleteList = (params) => {
 };
 
 export const aditList = (params, data) => {
-  
+
   return request({
     url: `/rights/${params}`, //请求路由
     method: "patch", //请求方式

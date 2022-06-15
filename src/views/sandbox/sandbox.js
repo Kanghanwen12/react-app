@@ -10,15 +10,15 @@ import './sandbox.css'
 import { connect } from "react-redux";
 import NewRouter from './newRouter'
 
-const  { Content } =  Layout;
- const  Sandbox = (props) => {
+const { Content } = Layout;
+ const Sandbox = (props) => {
    console.log(props,'props')
   return (
     <Layout>
       <SideMenu></SideMenu>
       <Layout className="site-layout">
         <TopHeader></TopHeader>
-        <Content  className="site-layout-background"
+        <Content className="site-layout-background"
           style={{
             margin: '24px 16px',
             padding: 24,
@@ -26,7 +26,7 @@ const  { Content } =  Layout;
             overflow: 'auto'
           }}>
         <Switch>
-       
+
         <Spin size="large" spinning={props.isLoading}>
            <NewRouter></NewRouter>
           </Spin>
@@ -38,8 +38,8 @@ const  { Content } =  Layout;
 }
 const mapStateToProps = (state) =>{
   console.log(state,' state')
-  const {LoadingReducer} = state 
-  const {isLoading}= LoadingReducer
+  const {LoadingReducer} = state
+  const {isLoading} = LoadingReducer
   return {
     isLoading,
   }

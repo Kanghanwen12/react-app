@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Layout, Dropdown, Space, Menu, Avatar } from 'antd';
 import {
   MenuUnfoldOutlined,
@@ -42,7 +42,7 @@ const { Header } = Layout;
       ]}
     />
   );
-  const  {role} = JSON.parse(localStorage.getItem('tonken'))
+  const {role} = JSON.parse(localStorage.getItem('tonken'))
   return (
     <Header
       className="site-layout-background"
@@ -73,13 +73,13 @@ const { Header } = Layout;
 //     // maDispatchToProps
 //  )
 const mapStateToProps = (state) =>{
-  const {collapsedReducer} = state 
-  const {isCollapsed}= collapsedReducer
+  const {collapsedReducer} = state
+  const {isCollapsed} = collapsedReducer
   return {
     isCollapsed,
   }
 }
-const mapDispatchToProps ={
+const mapDispatchToProps = {
   changeColl(){
     return {
       type: 'change_collapsed'
@@ -88,5 +88,5 @@ const mapDispatchToProps ={
   }
 }
 
-export default  connect(mapStateToProps,mapDispatchToProps)(withRouter (TopHeader))
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter (TopHeader))
 

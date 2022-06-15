@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux'
-import { collapsedReducer }  from './reducers/collapsedReducer'
+import { collapsedReducer } from './reducers/collapsedReducer'
 import {LoadingReducer} from './reducers/loadingReducer'
 
 

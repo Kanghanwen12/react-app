@@ -3,11 +3,10 @@ import { Layout, Menu } from 'antd';
 import {
   UserOutlined,
   VideoCameraOutlined,
-  UploadOutlined,
 } from '@ant-design/icons';
 import { withRouter } from 'react-router-dom';
 import {connect} from 'react-redux'
-import  './index.css'
+import './index.css'
 import { ChildList } from '../../util/api'
 const { Sider } = Layout;
 
@@ -49,7 +48,7 @@ const { Sider } = Layout;
         setDataMenu(res.data)
       })
   }, [])
-  const iconList= {
+  const iconList = {
     '/home': <UserOutlined />,
     '/right-manage': <VideoCameraOutlined />,
     '/right-manage/role/list': <VideoCameraOutlined />,
@@ -61,7 +60,7 @@ const { Sider } = Layout;
   }
   // 侧边栏导航数据
   const items2 = (list) =>{
-    return list.map((item, index) => {
+    return list.map((item) => {
       if (pagepermisson(item)) {
         return {
           key: item.key,
@@ -76,14 +75,14 @@ const { Sider } = Layout;
 };
 const onClick = (e) =>{
   props.history.push(e.key)
-  
+
 }
 const onOpenChange = (e) =>{
   console.log(e,'onOpenChange')
   console.log(props,'props')
 }
 const keys = props.location.pathname
-const onpenKeys = ['/'+ props.location.pathname.split('/')[1]]
+const onpenKeys = ['/' + props.location.pathname.split('/')[1]]
   return (
       <Sider trigger={null} collapsible collapsed={props.isCollapsed}>
         <div
@@ -108,8 +107,8 @@ const onpenKeys = ['/'+ props.location.pathname.split('/')[1]]
   );
 }
 const mapStateToProps = (state) =>{
-  const {collapsedReducer} = state 
-  const {isCollapsed}= collapsedReducer
+  const {collapsedReducer} = state
+  const {isCollapsed} = collapsedReducer
   return {
     isCollapsed,
   }

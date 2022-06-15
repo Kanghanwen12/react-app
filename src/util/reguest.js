@@ -2,7 +2,7 @@ import axios from 'axios'
 import store from '../redux/store'
 
 // axios.defaults.baseURL = 'http://localhost:3000'
-var request = axios.create({
+const request = axios.create({
   baseURL:'http://localhost:3000', // 基准地址
   timeout:5000
 })

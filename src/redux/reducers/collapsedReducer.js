@@ -7,10 +7,11 @@ export const collapsedReducer = (
   console.log(action);
   let { type } = action;
   switch (type) {
-    case "change_collapsed":
+    case "change_collapsed": {
       let newState = { ...prevState };
       newState.isCollapsed = !newState.isCollapsed;
       return newState;
+    }
   }
   return prevState;
 };

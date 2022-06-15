@@ -1,7 +1,7 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input, message } from "antd";
+import { Button, Form, Input, message } from "antd";
 import React from "react";
-import  './login.css'
+import './login.css'
 import { withRouter } from "react-router-dom";
 import {LoginApi} from "../../util/api";
 
@@ -16,7 +16,7 @@ const Login = (props) => {
       console.log(res.data)
       if(res.data.length === 0) {
         message.error('账号没权限，请重新登录')
-      }else {
+      } else {
         localStorage.setItem('tonken', JSON.stringify(res.data[0]))
         props.history.push('/')
       }

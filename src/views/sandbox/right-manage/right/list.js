@@ -1,6 +1,6 @@
 import { Table, Tag, Space } from 'antd';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
+// import axios from 'axios'
 import { ChildList, DeleteList, aditList } from '../../../../util/api'
 
 
@@ -65,32 +65,34 @@ const List = () => {
   const del = (record) => {
     console.log(record);
     DeleteList({id:record.id}).then(res => {
+      console.log(res)
         setDataSource(dataSource.fifter(data => data.id !== record.id))
       }).catch(res =>{
+        console.log(res)
         console.log(11)
       })
     // axios.delete(`/rights/${record.id}`).then(res =>{
     //   setDataSource(dataSource.fifter(data => data.id !== record.id))
     // })
-  
+
   };
   const adit = (item) => {
     console.log(item);
-    item.pagepermisson =  item.pagepermisson === 1 ? 0 : 1 
+    item.pagepermisson = item.pagepermisson === 1 ? 0 : 1
     setDataSource([...dataSource])
     aditList(item.id,{pagepermisson: item.pagepermisson}).then(res => {
-
+      console.log(res)
     })
       // axios.patch(`/rights/${item.id}`,{
       //   pagepermisson: item.pagepermisson
       // }).then(res =>{
-   
+
       // })
 
-   
+
 
   };
-  
+
   return (
     <>
       <Table
