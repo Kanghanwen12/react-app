@@ -39,6 +39,7 @@ const Login = (props) => {
 
       <div className="formDiv">
         <div className="title">登录系统</div>
+        <div>(<span style={{color: "red"}}>想启动项目请先看README.md文档</span>)</div>
         <Form
           name="normal_login"
           className="login-form"
