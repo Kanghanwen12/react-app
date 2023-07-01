@@ -17,6 +17,7 @@ export default function IndexRouter() {
           <Route path="/login" component={Login} />
           {/* <Route path="/" component={Sandbox} /> */}
           <Route path="/" render={()=>
+            // <Sandbox></Sandbox>
              localStorage.getItem('tonken') ? <Sandbox></Sandbox> : <Login></Login>
           }/>
         </Switch>

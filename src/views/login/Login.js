@@ -8,8 +8,9 @@ import {LoginApi} from "../../util/api";
 
 const Login = (props) => {
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    console.log("Received values of form.js: ", values);
     LoginApi({
+
       username: values.username,
       password: values.password
     }).then(res =>{
