@@ -7,8 +7,8 @@ In the project directory, you can run:
 #### 第一次启动前 需要先全局安装json-server工具，可以编写接口数据，最大程度模拟接口，安装方式
 npm install -g json-server
 
-启动 json-server --watch db.json后
-### `yarn start`
+1、### 启动 json-server --watch db.json
+2、### `yarn start`
 db.json文件我放在了pubilc文件下
 然后执行npm start 
 
